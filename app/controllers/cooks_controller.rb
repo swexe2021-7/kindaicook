@@ -1,39 +1,27 @@
 class CooksController < ApplicationController
-    def index
-   @cooks = Cook.all #SELECT * FROM TWEET;
+  def index
+    @cooks = Cook.all
   end
+
   def new
-   @cook = Cook.new
+    @cook = Cook.new
   end
+
   def create
-   @cook = Cooks.new(message: params[:cook][:message], tdate: Time.current)
+    #ログイン中にしたツイートリンクが表示されないのでsession[:user_id]が空であることは考慮しなくてよい
+    user = User.find_by(uid: current_user.uid)
+    @cook = Cook.new(message: params[:cook][:message], user_id: user.id)
     if @cook.save
-     flash[:notice] = '1レコード追加しました'
-     redirect_to root_path
-    else
-     render 'new'
-    end
-  end
-  def show
-   @cook = Cook.find(params[:id])
-  end
-  def destroy
-  tweet = Cook.find(params[:id])
-    if cook.destroy
-      flash[:notice] = '1レコード追加しました'
-    end
-    redirect_to root_path
-  end
-  def edit
-    @cook = Cook.find(params[:id])
-  end
-  def update
-    @cook = Cook.find(params[:id])
-    if @cook.update(message: params[:cook][:message])
-      flash[:notice] = '1レコード更新しました'
+      #TODO: ツイートが成功したことをユーザに知らせる
       redirect_to root_path
     else
-      render 'edit'
+      render 'new'
     end
+  end
+
+  def destroy
+    cook = Cook.find(params[:id])
+    cook.destroy
+    redirect_to root_path
   end
 end
