@@ -1,13 +1,13 @@
 class CooksController < ApplicationController
     def index
-   @tweet = Tweet.all #SELECT * FROM TWEET;
+   @cooks = Cook.all #SELECT * FROM TWEET;
   end
   def new
-   @tweet = Tweet.new
+   @cook = Cook.new
   end
   def create
-   @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current)
-    if @tweet.save
+   @cook = Cooks.new(message: params[:cook][:message], tdate: Time.current)
+    if @cook.save
      flash[:notice] = '1レコード追加しました'
      redirect_to root_path
     else
@@ -15,21 +15,21 @@ class CooksController < ApplicationController
     end
   end
   def show
-   @tweet = Tweet.find(params[:id])
+   @cook = Cook.find(params[:id])
   end
   def destroy
-  tweet = Tweet.find(params[:id])
-    if tweet.destroy
+  tweet = Cook.find(params[:id])
+    if cook.destroy
       flash[:notice] = '1レコード追加しました'
     end
     redirect_to root_path
   end
   def edit
-    @tweet = Tweet.find(params[:id])
+    @cook = Cook.find(params[:id])
   end
   def update
-    @tweet = Tweet.find(params[:id])
-    if @tweet.update(message: params[:tweet][:message])
+    @cook = Cook.find(params[:id])
+    if @cook.update(message: params[:cook][:message])
       flash[:notice] = '1レコード更新しました'
       redirect_to root_path
     else
