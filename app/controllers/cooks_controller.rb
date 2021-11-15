@@ -1,13 +1,13 @@
 class CooksController < ApplicationController
     def index
-   @tweet = Tweet.all #SELECT * FROM TWEET;
+   @cook = Cook.all #SELECT * FROM TWEET;
   end
   def new
-   @tweet = Tweet.new
+   @cook = Cook.new
   end
   def create
-   @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current)
-    if @tweet.save
+   @cook = Cook.new(message: params[:cook][:message], tdate: Time.current)
+    if @cook.save
      flash[:notice] = '1レコード追加しました'
      redirect_to root_path
     else
