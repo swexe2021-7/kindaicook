@@ -8,15 +8,15 @@ class UsersController < ApplicationController
     end
     
     def create
-        @user = User.new(uid: params[:user][:uid],password: params[:user][:pass],
-        password_confirmation: params[:user][:pass_confirmation])
+        @user = User.new(uid: params[:user][:uid],password: params[:user][:password],
+        password_confirmation: params[:user][:password_confirmation])
         if @user.valid? #validatesを実行してくれる
             flash[:notice] = 'ユーザー登録しました'
             @user.pass = BCrypt::Password.create(params[:user][:password])
             @user.save
             redirect_to users_path
         else
-            attr_reader :'new'
+            render 'new'
         end
     end
     
