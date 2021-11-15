@@ -2,8 +2,8 @@
 
 one:
   uid: MyString
-  pass: MyString
+  password: MyString
 
 two:
   uid: MyString
-  pass: MyString
+  password: MyString

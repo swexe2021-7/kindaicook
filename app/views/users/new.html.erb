@@ -1,17 +1,10 @@
-<% if @user.errors.present? %>
-<ul>
-<% @user.errors.full_messages.each do |msg| %>
-<li><%= msg %></li>
-<% end %>
-</ul>
-<% end %>
 
-<%= form_for @user , url: {action: :create} do |f| %>
-<p><%= f.label :uid, 'uid' %>
-<%= f.text_field :uid %>
-
-<%= f.label :pass, 'pass' %>
-<%= f.text_field :pass %>
-
-<%= f.submit '登録' %></p>
+<%= form_for @user, url: {action: :create} do |f| %>
+  <%= f.label :uid, 'uid' %> 
+  <%= f.text_field :uid %> 
+  <%= f.label :pass, 'password' %> 
+  <%= f.password_field :pass %> 
+  <%= f.label :pass_confirmation, 'password' %> 
+  <%= f.password_field :pass_confirmation %> 
+  <%= f.submit '登録' %>
 <% end %>
