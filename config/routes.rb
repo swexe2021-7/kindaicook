@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- resources :cook
+    resources :cooks
     root 'cook#index'
     get 'get_cook/:id', to: 'cook#get_tweet'
     
