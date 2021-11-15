@@ -10,17 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_08_081305) do
+ActiveRecord::Schema.define(version: 2021_11_15_072457) do
 
   create_table "cooks", force: :cascade do |t|
+    t.integer "user_id"
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "uid"
-    t.string "pass"
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "cook_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
