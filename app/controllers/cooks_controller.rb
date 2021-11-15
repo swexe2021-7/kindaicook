@@ -18,10 +18,35 @@ class CooksController < ApplicationController
       render 'new'
     end
   end
+<<<<<<< HEAD
 
   def destroy
     cook = Cook.find(params[:id])
     cook.destroy
     redirect_to root_path
   end
+=======
+  def show
+   @cook = Cook.find(params[:id])
+  end
+  def destroy
+  cook = Cook.find(params[:id])
+    if cook.destroy
+      flash[:notice] = '1レコード追加しました'
+    end
+    redirect_to root_path
+  end
+  def edit
+    @cook = Cook.find(params[:id])
+  end
+  def update
+    @cook = Cook.find(params[:id])
+    if @cook.update(message: params[:cook][:message])
+      flash[:notice] = '1レコード更新しました'
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+>>>>>>> X
 end
