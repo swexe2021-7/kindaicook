@@ -1,7 +1,4 @@
 class Cook < ApplicationRecord
-<<<<<<< HEAD
-end
-=======
   #TODO: validates
   belongs_to :user
   has_many :likes, dependent: :destroy
@@ -19,4 +16,3 @@ end
     like_users.include?(user)
   end
 end
->>>>>>> X

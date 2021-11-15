@@ -18,14 +18,12 @@ class CooksController < ApplicationController
       render 'new'
     end
   end
-<<<<<<< HEAD
 
   def destroy
     cook = Cook.find(params[:id])
     cook.destroy
     redirect_to root_path
   end
-=======
   def show
    @cook = Cook.find(params[:id])
   end
@@ -48,5 +46,4 @@ class CooksController < ApplicationController
       render 'edit'
     end
   end
->>>>>>> X
 end

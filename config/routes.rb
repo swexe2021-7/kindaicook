@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
     resources :cooks
     root 'cook#index'
-    get 'get_cook/:id', to: 'cook#get_tweet'
+    get 'get_cook/:id', to: 'cook#get_cook'
     
     resources :users
     get 'get_users/:id', to: 'user#get_user'
