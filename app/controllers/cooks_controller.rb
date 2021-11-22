@@ -1,10 +1,6 @@
 class CooksController < ApplicationController
   def index
-<<<<<<< HEAD
     @cooks = Cook.all#SELECT * FROM TWEET;
-=======
-    @cooks = Cook.all
->>>>>>> 1d0619569bf12918dd4e06a1af3efd5c939c070d
   end
 
   def new
