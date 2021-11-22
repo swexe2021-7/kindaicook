@@ -16,13 +16,14 @@ class UsersController < ApplicationController
             @user.save
             redirect_to users_path
         else
-            render 'new'
+            redirect_to new_user_path
         end
     end
     
     def destroy
         user = User.find(params[:id])
         user.destroy
-        redirect_to root_path
+        flash[:notice]='ユーザー削除しました'
+        redirect_to users_path
     end
 end
