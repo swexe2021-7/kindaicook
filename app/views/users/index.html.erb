@@ -1,12 +1,18 @@
 <% if flash[:notice] %>
     <%= flash[:notice] %>
 <% end %>
-
-<% @user.each do |user| %> 
-<p>
-uid:<%= user.uid %>　pass:<%= user.pass %>
-<%= link_to '削除', "/users/#{user.id}",method: :delete %>
-</p>
+<% @user.each do |e| %>
+  <p>
+    <%= e.uid %>
+    <%= e.pass %>
+    <%= link_to '削除', user_path(e), method: :delete %>
+    </p>
 <% end %>
-<p><%= link_to 'ユーザ登録', '/users/new' %></p>
-<p><%= link_to 'メイン', '/' %></p>
+
+<p>
+  <%= link_to '新規ユーザ追加', new_user_path %>
+</p>
+
+<p>
+  <%= link_to '投稿一覧', cooks_path %>
+</p>
