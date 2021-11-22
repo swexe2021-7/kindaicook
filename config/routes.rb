@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'mains/index'
   resources :users
   resources :cooks
   get 'top/main'
