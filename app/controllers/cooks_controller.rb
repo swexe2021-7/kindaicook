@@ -12,7 +12,7 @@ class CooksController < ApplicationController
 
   def create
     #ログイン中にしたツイートリンクが表示されないのでsession[:user_id]が空であることは考慮しなくてよい
-    user = User.find_by(uid: current_user.uid)
+    user = User.find_by(uid: session[:login_uid])
     @cook = Cook.new(message: params[:cook][:message], user_id: user.id)
     if @cook.save
       #TODO: ツイートが成功したことをユーザに知らせる
