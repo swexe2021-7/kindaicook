@@ -5,11 +5,7 @@ class User < ApplicationRecord
   
   def password=(val)
     if val.present?
-<<<<<<< HEAD
       self.pass = BCrypt::Password.create(val)
-=======
-      self.pass= BCrypt::Password.create(val)
->>>>>>> nov29
     end
     @password = val
   end
