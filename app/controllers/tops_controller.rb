@@ -1,5 +1,5 @@
-class TopController < ApplicationController
-  def main
+class TopsController < ApplicationController
+    def main
     render 'login'
   end
 
@@ -20,4 +20,5 @@ class TopController < ApplicationController
     session.delete(:login_uid)
     redirect_to root_path
   end
+
 end
