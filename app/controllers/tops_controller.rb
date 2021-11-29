@@ -1,4 +1,4 @@
-class TopController < ApplicationController
+class TopsController < ApplicationController
   def main
     render 'login'
   end

@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   resources :users
   resources :cooks
-  get 'top/main'
-  post 'top/login'
-  get 'top/logout'
+  get 'tops/main'
+  post 'tops/login'
+  get 'tops/logout'
   resources :likes
   root 'cooks#index'
 end
