@@ -1,7 +1,7 @@
 <% if flash[:notice] %>
     <%= flash[:notice] %>
 <% end %>
-<% @user.each do |e| %>
+<% @users.each do |e| %>
   <p>
     <%= e.uid %>
     <%= e.pass %>
