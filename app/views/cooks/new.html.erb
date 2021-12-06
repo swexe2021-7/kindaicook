@@ -1,5 +1,16 @@
 <%= form_for @cook, url: {action: :create} do |f| %>
-  <%= f.label :message, 'レシピを書く' %> 
+  <%= f.label :message, 'レシピ名' %> 
   <%= f.text_field :message %> 
+  
+  <%= check_box :Time ,"1", {:checked => "checked"}%> 3分以下
+    
+  <%= check_box :Time ,"2", {} %> 4~10分
+   
+  <%= check_box :Time ,"3", {} %> 11~30分
+   
+  <%= check_box :Time ,"4", {} %> 30分以上
+   
+  
+    
   <%= f.submit 'レシピを投稿する' %>
 <% end %>
