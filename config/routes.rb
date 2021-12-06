@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'tops/logout'
   resources :likes
   root 'cooks#index'
+
 end

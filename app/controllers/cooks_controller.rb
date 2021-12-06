@@ -18,10 +18,21 @@ class CooksController < ApplicationController
       render 'new'
     end
   end
-
+  
   def destroy
     cook = Cook.find(params[:id])
     cook.destroy
     redirect_to root_path
   end
-end
+
+
+   def index
+  
+  @cook = Cook.where("message LIKE ? ",'%' + params[:search] + '%')
+  
+    
+  end
+  end
+ 
+
+
