@@ -27,27 +27,18 @@ class CooksController < ApplicationController
     cook.destroy
     redirect_to root_path
   end
-<<<<<<< HEAD
 
 
   def index
     
     if params[:search] == nil or params[:search] == ''
-
- @cooks= Cook.all
-
- 
-
-else
-  @cooks = Cook.where("message LIKE ? ",'%' + params[:search] + '%')
-  
-    
+      @cooks= Cook.all
+    else
+      @cooks = Cook.where("message LIKE ? ",'%' + params[:search] + '%')
+    end
   end
 end
-=======
-  
->>>>>>> main
-end
+
  
 
 
