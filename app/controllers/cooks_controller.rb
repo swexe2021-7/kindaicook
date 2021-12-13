@@ -1,9 +1,11 @@
 class CooksController < ApplicationController
+  
   def index
-    
-    @cooks = Cook.all#SELECT * FROM TWEET;
-    
-    @cook = Cook.where("message LIKE ? ",'%' + params[:search] + '%')
+    if params[:search] == nil or params[:search] == ''
+      @cooks= Cook.all
+    else
+      @cooks = Cook.where("message LIKE ? ",'%' + params[:search] + '%')
+    end
   end
 
   def new
@@ -27,27 +29,10 @@ class CooksController < ApplicationController
     cook.destroy
     redirect_to root_path
   end
-<<<<<<< HEAD
-
-
-  def index
-    
-    if params[:search] == nil or params[:search] == ''
-
- @cooks= Cook.all
-
- 
-
-else
-  @cooks = Cook.where("message LIKE ? ",'%' + params[:search] + '%')
   
-    
+  def show 
+        @cook = Cooks.find(params[:id])
   end
 end
-=======
-  
->>>>>>> main
-end
- 
 
 
