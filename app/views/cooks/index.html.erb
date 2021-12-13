@@ -4,12 +4,12 @@
 
  <%= text_field_tag :search %>
 
-<%= submit_tag "Search" ,:message => nil ,class: "button is-info"%> 
 
+<%= submit_tag "Search" ,:message => nil ,class: "button is-info"%> 
 
 <% end %>
 
-<% @cook.each do |e| %>
+<% @cooks.each do |e| %>
   <p>
     <%= e.message %>
     <% if current_user %>

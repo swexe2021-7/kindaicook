@@ -26,13 +26,21 @@ class CooksController < ApplicationController
   end
 
 
-   def index
-  
-  @cook = Cook.where("message LIKE ? ",'%' + params[:search] + '%')
+  def index
+    
+    if params[:search] == nil or params[:search] == ''
+
+ @cooks= Cook.all
+
+ 
+
+else
+  @cooks = Cook.where("message LIKE ? ",'%' + params[:search] + '%')
   
     
   end
-  end
+end
+end
  
 
 
