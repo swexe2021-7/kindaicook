@@ -1,5 +1,9 @@
 class TopsController < ApplicationController
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> main
   def main
     render 'login'
   end
