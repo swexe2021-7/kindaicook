@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2021_12_06_070425) do
+=======
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2021_11_22_073326) do
+=======
+ActiveRecord::Schema.define(version: 2021_11_29_072252) do
+>>>>>>> a858dd11b7bfac61f752edcf2abd7a3ae6ff8c7c
+>>>>>>> 9a7ff6767a02dc3b40766edb241d611d40b09427
 
   create_table "cooks", force: :cascade do |t|
     t.integer "user_id"
