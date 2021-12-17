@@ -12,9 +12,10 @@
 <% @cooks.each do |e| %>
   <p>
     <%= e.message %>
+    <%= link_to '表示', cook_path(e) %>
     <% if current_user %>
       <%= link_to '削除', cook_path(e), method: :delete %>
-      <%= link_to '表示', "/cooks/#{cook.id}" %>
+      
       <% if e.likes.count > 0 %>
         <%= link_to 'いいね削除', like_path(e), method: :delete %>
       <% else %>

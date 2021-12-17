@@ -1,9 +1,4 @@
 class TopsController < ApplicationController
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> main
   def main
     render 'login'
   end
@@ -19,7 +14,7 @@ class TopsController < ApplicationController
       render 'login'
     end
   end
-
+  
   def logout
     #TODO: ログアウトに成功したことをユーザに知らせる
     session.delete(:login_uid)
