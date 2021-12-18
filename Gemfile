@@ -64,7 +64,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'rails-i18n'
 gem 'pry-rails'
+<<<<<<< HEAD
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'bootstrap_form'
+=======
+>>>>>>> origin/master
