@@ -1,0 +1,16 @@
+<%= bootstrap_form_for@cook, url: {action: :create} do |f| %>
+        <%= f.label :message, 'レシピ名' %> 
+        <%= f.text_field :message %> 
+     
+        <%= f.label :step1, 'ステップ1' %> 
+        <%= f.text_field :step1%> 
+       
+        <%= f.label :step2, 'ステップ2' %> 
+        <%= f.text_field :step2  %> 
+        
+        <%= f.label :step3, 'ステップ3' %> 
+        <%= f.text_field :step3 %>
+        
+        <%= f.submit 'レシピを投稿する' %>
+      
+<% end %>
