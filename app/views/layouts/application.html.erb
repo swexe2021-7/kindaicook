@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+
 <html>
   <head>
     <title>Kindaicook</title>
@@ -8,8 +10,81 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  
+      <header class="sticky-top">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white">
+        <a>
+          
+          <%= link_to 'KindaiCooks', root_path, data: {"turbolinks" => false} %>
+          
+          
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <%= link_to '投稿フォーム', new_cook_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to '投稿一覧', cooks_path %>
+              </li>
+              <li class="nav-item">
+  
+              </li>
+              <li class="nav-item">
+                
+              </li>
+              <li class="nav-item">
+              
+              </li>
+              <%= submit_tag '検索' %>
+
+               <%= text_field_tag :search %>
+          </ul>
+        </div>
+      </nav>
+       
+      <nav class="navbar navbar-expand-md">
+    </header>
 
   <body>
     <%= yield %>
   </body>
+
+
+<footer class="footer">
+	<div class="container text-center">
+	  <p class="text-muted">©︎<?php echo $year;?>KindaiCooksse</p>
+	</div>
+</footer>
 </html>
+
+<style>
+html {
+  position: relative;
+  min-height: 100%;
+}
+.sticky-top .header_img img{
+  width:25%;
+}
+body {
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #312d2a;
+}
+.container {
+  width: auto;
+  max-width: 680px;
+  padding: 0 15px;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+</style>
