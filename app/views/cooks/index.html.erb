@@ -15,8 +15,9 @@
 <% @cooks.each do |e| %>
   <p>
    <div class="btn-toolbar">
+     <%= e.message %>
       <div class="btn-group">
-        <%= e.message %>
+        
         <br>
         <br>
         <%= image_tag "/get_image/#{e.id}",size:'200x100' %>
