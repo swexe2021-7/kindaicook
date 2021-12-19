@@ -6,6 +6,7 @@ class CreateCooks < ActiveRecord::Migration[5.2]
       t.string :step1
       t.string :step2
       t.string :step3
+      t.binary :img
 
       t.timestamps
     end
