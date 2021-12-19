@@ -1,14 +1,86 @@
+
+
+<div class="container">
+    
+    <div class="row">
+<div class="col-md-6">
+<h2><%= @cook.message %></h2>
+<br>
+<%= image_tag "/get_image/#{@cook.id}" ,class:'size'%>
+
+</div>
+
 <p>
-<strong>レシピ:</strong>
-<%= @cook.message %><br>
-<h3>手順1</h3>
-<%= @cook.step1 %><br>
-<h3>手順2</h3>
-<%= @cook.step2 %><br>
-<h3>手順3</h3>
-<%= @cook.step3 %>
+    
+<div class="col-md-6">
+    <h5>具材</h5>
 
-<%= image_tag "/get_image/#{@cook.id}" %>
-
+    <div class="box25">
+    <%= @cook.step1 %><br>
+    </div>
+    </div>
+    <div class="col-md-6">
+    <h5>作り方</h5>
+    <div class="box25">
+    <%= @cook.step2 %><br>
+    </div>
+    </div>
+    <div class="col-md-6">
+    <h5>コツなど</h5>
+    <div class="box25">
+    <%= @cook.step3 %><br>
+    </div>
+    </div>
+</div>
 </p>
 <%= link_to '戻る', '/' %>
+</div>
+</div>
+<style>
+img.size{
+    width: 320px;
+	height: 220px;
+	padding-bottom: 10px;
+}
+    h5 {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem 1rem 4rem;
+  color: #fff;
+  border-radius: 100vh 0 0 100vh;
+  background: #fa4141;
+}
+
+h5:before {
+  position: absolute;
+  top: calc(50% - 7px);
+  left: 10px;
+  width: 12px;
+  height: 14px;
+  content: '';
+  border-radius: 50%;
+  background: #fff;
+}
+.box25{
+    position: relative;
+    background: #fff0cd;
+    box-shadow: 0px 0px 0px 5px #fff0cd;
+    border: dashed 2px white;
+    padding: 0.2em 0.5em;
+    color: #454545;
+}
+.box25:after{
+    position: absolute;
+    content: '';
+    right: -7px;
+    top: -7px;
+    border-width: 0 15px 15px 0;
+    border-style: solid;
+    border-color: #ffdb88 #fff #ffdb88;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+.box25 p {
+    margin: 0; 
+    padding: px;
+}
+</style>

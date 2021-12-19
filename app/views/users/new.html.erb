@@ -1,10 +1,7 @@
 
-<%= form_for @user, url: {action: :create} do |f| %>
-  <%= f.label :uid, 'uid' %> 
-  <%= f.text_field :uid %> 
-  <%= f.label :password, 'password' %> 
-  <%= f.password_field :password %> 
-  <%= f.label :password_confirmation, 'password' %> 
-  <%= f.password_field :password_confirmation %> 
+<%= bootstrap_form_for @user, url: {action: :create} do |f| %>
+  <%= f.text_field :uid, label: "ユーザーID"%> 
+  <%= f.password_field :password , label: "パスワード"%> 
+  <%= f.password_field :password_confirmation , label: "パスワード再入力"%> 
   <%= f.submit '登録' %>
 <% end %>

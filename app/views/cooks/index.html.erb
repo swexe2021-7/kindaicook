@@ -1,59 +1,67 @@
-
+<body>
 <h3>レシピを検索</h3>
 
 <%= form_tag({controller:"cooks",action:"index"}, method: :get) do %>
-
-
-
- <%= text_field_tag :search %>
-
-<%= submit_tag "Search" ,:message => nil ,class: "button is-info"%> 
-
-
-<% end %>
-
-<% @cooks.each do |e| %>
-  <p>
-   <div class="btn-toolbar">
-     <%= e.message %>
-      <div class="btn-group">
-        
-        <br>
-        <br>
-        <%= image_tag "/get_image/#{e.id}",size:'200x100' %>
-          
-        
-        <div class="mx-2"><%= button_to "表示",cook_path(e),method: :get,class: "btn btn-outline-primary btn-sm" %></div>
-        <% if current_user %>
-            <div class="mx-2"><%= button_to "削除",cook_path(e),method: :delete,class: "btn btn-outline-danger btn-sm" %></div>
-          <% if e.likes.count > 0 %>
-            <%= link_to 'いいね削除', like_path(e), method: :delete %>
-          <% else %>
-            <%= link_to 'いいね', likes_path(cook_id: e.id), method: :post %>
-          <% end %>
-    
-        <% end %>
-        </div>
-      </div>
-    </p>
+  <%= text_field_tag :search %>
+  <%= submit_tag "Search" ,:message => nil ,class: "button is-info"%> 
 <% end %>
 
 <p> 
 <% if current_user %>
   <%= button_to "レシピを投稿する",new_cook_path,method: :get,class: "btn btn-outline-primary btn-lg" %>
-  
-<% end %>
-</p>
-
-<p>
-<% if current_user %>
-  <%= link_to 'ログアウト', tops_logout_path %>
+  <br>
+  <%= button_to 'ログアウト', tops_logout_path,method: :get,class: "btn btn-outline-primary btn-lg"  %>
 <% else %>
-  <%= link_to 'ログイン', tops_main_path %>
+  <%= button_to 'ログイン', tops_main_path,method: :get,class: "btn btn-outline-primary btn-lg"%>
 <% end %>
-</p>
 
-<p>
-  <%= link_to 'ユーザ一覧', users_path %>
-</p>
+<div class="row">
+  <% @cooks.each do |e| %>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="box10">
+        <div class="container">
+          <%= e.message %>
+        </div>
+        <br>
+        <%= image_tag "/get_image/#{e.id}",size:'200x120',style:"margin-bottom:20px" %>
+        <div class="btn-toolbar">
+          <div class="btn-group">
+            <div class="mx-2">
+              <%= button_to "表示",cook_path(e),method: :get,class: "btn btn-outline-primary btn-sm" %>
+            </div>
+            <% if current_user %>
+              <div class="mx-2">
+                <%= button_to "削除",cook_path(e),method: :delete,class: "btn btn-outline-danger btn-sm" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</dev>
 
+</body>
+
+<style>
+body {
+margin: 5px 10px 15px 20px;
+}
+.box10 {
+     padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+.box10 p {
+    margin: 0; 
+    padding: 0;
+}
+.container{
+  text-align:center;
+  background-color:#ffe2e0;
+}
+
+</style>
