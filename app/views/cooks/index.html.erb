@@ -1,28 +1,19 @@
-<<<<<<< HEAD
 
-
-=======
->>>>>>> origin/master
 <h3>レシピを検索</h3>
 
 <%= form_tag({controller:"cooks",action:"index"}, method: :get) do %>
 
-<%= submit_tag '検索' %>
+
 
  <%= text_field_tag :search %>
 
-
-<<<<<<< HEAD
-
-=======
 <%= submit_tag "Search" ,:message => nil ,class: "button is-info"%> 
->>>>>>> origin/master
+
 
 <% end %>
 
 <% @cooks.each do |e| %>
   <p>
-<<<<<<< HEAD
    <div class="btn-toolbar">
       <div class="btn-group">
         <%= e.message %>
@@ -43,30 +34,13 @@
         <% end %>
         </div>
       </div>
-=======
-    <%= e.message %>
-    <%= link_to '表示', cook_path(e) %>
-    <% if current_user %>
-      <%= link_to '削除', cook_path(e), method: :delete %>
-      
-      <% if e.likes.count > 0 %>
-        <%= link_to 'いいね削除', like_path(e), method: :delete %>
-      <% else %>
-        <%= link_to 'いいね', likes_path(cook_id: e.id), method: :post %>
-      <% end %>
-
-    <% end %>
->>>>>>> origin/master
     </p>
 <% end %>
 
 <p> 
 <% if current_user %>
-<<<<<<< HEAD
   <%= button_to "レシピを投稿する",new_cook_path,method: :get,class: "btn btn-outline-primary btn-lg" %>
-=======
->>>>>>> origin/master
-  <%= link_to 'レシピを投稿する', new_cook_path %>
+  
 <% end %>
 </p>
 
@@ -82,12 +56,3 @@
   <%= link_to 'ユーザ一覧', users_path %>
 </p>
 
-<style>
-.flex-container {
-    display: flex;
-}
-
-.image-wrap{
-    margin: 10px 5px;
-}
-</style>
