@@ -1,7 +1,15 @@
 
 <%= bootstrap_form_for @user, url: {action: :create} do |f| %>
+<main>
   <%= f.text_field :uid, label: "ユーザーID"%> 
   <%= f.password_field :password , label: "パスワード"%> 
   <%= f.password_field :password_confirmation , label: "パスワード再入力"%> 
   <%= f.submit '登録' %>
+</main>
 <% end %>
+
+<style>
+main {
+       padding: 15px 30px;
+}
+</style>

@@ -1,6 +1,6 @@
 
 <%= bootstrap_form_for@cook, url: {action: :create} do |f| %>
-<body>
+<main>
         <%= f.text_field :message , label:"料理名"%> 
  
         <%= f.text_area :step1, label:"材料"%> 
@@ -19,11 +19,13 @@
 
         
         <%= f.submit 'レシピを投稿する' %>
-</body>
+</main>
       
 <% end %>
 <style>
-body {
-        margin: 5px 10px 15px 20px;
+main {
+        
+       padding: 15px 30px;
+
 }
 </style>

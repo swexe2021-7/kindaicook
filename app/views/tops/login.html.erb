@@ -1,8 +1,36 @@
+<div class="main-container">
+  <div class="centerMiddle">
+      
+      <main>
+        <%= form_tag tops_login_path, method: :post do %>
+        <%= label_tag :uid, 'ユーザーID' %> 
+        <%= text_field_tag :uid %> 
+        <br>
+        <%= label_tag :pass, 'パスワード' %> 
+        <%= password_field_tag :pass %> 
+        <br>
+        <%= submit_tag 'ログイン' %>
+      <% end %>
+      <br>
+        <%= button_to '新規ユーザ追加', new_user_path,method: :get %>
+  <br>
+      </main>
+    </dev>
+</dev>
 
-<%= form_tag tops_login_path, method: :post do %>
-  <%= label_tag :uid, 'uid' %> 
-  <%= text_field_tag :uid %> 
-  <%= label_tag :pass, 'pass' %> 
-  <%= password_field_tag :pass %> 
-  <%= submit_tag 'ログイン' %>
-<% end %>
+<style>
+main {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+   
+	padding: 15px 30px;
+	background: rgba(0,0,0,0.4);
+	color: #fff;
+	text-align: center;
+	width: 300px;
+}
+</style>
+
+
